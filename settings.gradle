@@ -1,0 +1,5 @@
+rootProject.name = 'order-reactive'
+include 'common'
+include 'inventory'
+include 'order'
+include 'shipping'
