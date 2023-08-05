@@ -11,6 +11,7 @@ import java.util.List;
 @NoArgsConstructor
 public class Order {
 
+    private Long orderId;
     private LocalDate shippingDate;
     private Address shipmentAddress;
     private OrderStatus orderStatus;

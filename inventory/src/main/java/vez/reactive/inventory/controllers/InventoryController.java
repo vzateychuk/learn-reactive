@@ -7,10 +7,12 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import vez.common.dto.order.Order;
 import vez.common.dto.Product;
+import vez.common.dto.order.Order;
 import vez.reactive.inventory.services.ProductService;
+
+import java.util.List;
+import java.util.stream.StreamSupport;
 
 @RestController
 @RequestMapping("/api/v1")
@@ -24,8 +26,11 @@ public class InventoryController {
     }
 
     @GetMapping({"/products", "/products/"})
-    public Iterable<Product> getAllProducts() {
-        return productService.getProducts();
+    public List<Product> getAllProducts() {
+        return StreamSupport.stream(
+                productService.getProducts().spliterator(),
+                false
+        ).toList();
     }
 
     @PostMapping("/processOrder")
