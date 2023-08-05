@@ -1,4 +1,4 @@
-package vez.common.dto.order;
+package vez.common.domain.order;
 
 import lombok.Data;
 

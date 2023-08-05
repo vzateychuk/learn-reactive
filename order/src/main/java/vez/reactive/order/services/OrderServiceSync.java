@@ -6,8 +6,9 @@ import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestOperations;
-import vez.common.dto.order.Order;
-import vez.common.dto.order.OrderStatus;
+
+import vez.common.domain.order.Order;
+import vez.common.domain.order.OrderStatus;
 import vez.reactive.order.repo.OrderRepo;
 
 @Service

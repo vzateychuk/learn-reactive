@@ -1,11 +1,13 @@
 package vez.reactive.inventory.services;
 
-import vez.common.dto.order.Order;
-import vez.common.dto.Product;
+import vez.common.domain.Product;
+import vez.common.domain.order.Order;
+
+import java.util.List;
 
 public interface ProductService {
 
-    Iterable<Product> getProducts();
+    List<Product> getProducts();
 
     Order handleOrder(Order order);
 

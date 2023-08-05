@@ -1,6 +1,6 @@
 package vez.reactive.order.services;
 
-import vez.common.dto.order.Order;
+import vez.common.domain.order.Order;
 
 public interface OrderService {
 

@@ -3,9 +3,10 @@ package vez.reactive.shipping.services;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import vez.common.dto.Shipment;
-import vez.common.dto.order.Order;
-import vez.common.dto.order.OrderStatus;
+
+import vez.common.domain.Shipment;
+import vez.common.domain.order.Order;
+import vez.common.domain.order.OrderStatus;
 import vez.reactive.shipping.repo.ShippingRepo;
 
 import java.time.LocalDate;

@@ -3,10 +3,13 @@ package vez.reactive.inventory.services;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import vez.common.dto.order.Order;
-import vez.common.dto.order.OrderStatus;
-import vez.common.dto.Product;
+
+import vez.common.domain.Product;
+import vez.common.domain.order.Order;
+import vez.common.domain.order.OrderStatus;
 import vez.reactive.inventory.repo.ProductRepo;
+
+import java.util.List;
 
 @Service
 public class ProductServiceSync implements ProductService{
@@ -19,8 +22,8 @@ public class ProductServiceSync implements ProductService{
     }
 
     @Override
-    public Iterable<Product> getProducts() {
-        return productRepository.findAll();
+    public List<Product> getProducts() {
+        return productRepository.findAll().stream().toList();
     }
 
     @Override

@@ -5,8 +5,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import vez.common.dto.order.Order;
-import vez.common.dto.order.OrderStatus;
+
+import vez.common.domain.order.Order;
+import vez.common.domain.order.OrderStatus;
 import vez.reactive.order.services.OrderService;
 
 import java.util.List;
