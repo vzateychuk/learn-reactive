@@ -1,16 +1,22 @@
 package vez.reactive.inventory.services;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import vez.reactive.inventory.dto.Order;
-import vez.reactive.inventory.dto.OrderStatus;
-import vez.reactive.inventory.dto.Product;
+import vez.common.dto.order.Order;
+import vez.common.dto.order.OrderStatus;
+import vez.common.dto.Product;
 import vez.reactive.inventory.repo.ProductRepo;
 
 @Service
 public class ProductServiceSync implements ProductService{
 
-    private ProductRepo productRepository;
+    private final ProductRepo productRepository;
+
+    @Autowired
+    public ProductServiceSync(ProductRepo productRepository) {
+        this.productRepository = productRepository;
+    }
 
     @Override
     public Iterable<Product> getProducts() {

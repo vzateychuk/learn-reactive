@@ -1,8 +1,10 @@
-package vez.reactive.inventory.dto;
+package vez.common.dto;
 
+import lombok.Builder;
 import lombok.Data;
 
 @Data
+@Builder
 public class Product {
     private String productId;
     private Integer stock;

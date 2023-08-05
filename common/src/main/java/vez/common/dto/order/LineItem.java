@@ -1,4 +1,4 @@
-package vez.reactive.inventory.dto;
+package vez.common.dto.order;
 
 import lombok.Data;
 

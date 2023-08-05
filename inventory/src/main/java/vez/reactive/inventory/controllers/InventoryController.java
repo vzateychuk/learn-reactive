@@ -5,13 +5,15 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import vez.reactive.inventory.dto.Order;
-import vez.reactive.inventory.dto.Product;
+import vez.common.dto.order.Order;
+import vez.common.dto.Product;
 import vez.reactive.inventory.services.ProductService;
 
 @RestController
+@RequestMapping("/api/v1")
 public class InventoryController {
 
     private final ProductService productService;
@@ -21,17 +23,17 @@ public class InventoryController {
         this.productService = productService;
     }
 
-    @GetMapping
+    @GetMapping({"/products", "/products/"})
     public Iterable<Product> getAllProducts() {
         return productService.getProducts();
     }
 
-    @PostMapping
+    @PostMapping("/processOrder")
     public Order processOrder(@RequestBody Order order) {
         return productService.handleOrder(order);
     }
 
-    @DeleteMapping
+    @DeleteMapping("/revertOrder")
     public Order revertOrder(@RequestBody Order order) {
         return productService.revertOrder(order);
     }

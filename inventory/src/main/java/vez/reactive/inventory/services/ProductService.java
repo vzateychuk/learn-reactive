@@ -1,7 +1,7 @@
 package vez.reactive.inventory.services;
 
-import vez.reactive.inventory.dto.Order;
-import vez.reactive.inventory.dto.Product;
+import vez.common.dto.order.Order;
+import vez.common.dto.Product;
 
 public interface ProductService {
 
