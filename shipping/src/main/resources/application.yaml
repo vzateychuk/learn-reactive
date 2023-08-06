@@ -8,19 +8,18 @@ logging:
     root: INFO
 
 server:
-  port: 8082
   servlet:
     context-path: "/api/${spring.application.api-version}"
 
 spring:
   data:
     mongodb:
-      host: localhost
-      port: 27017
-      username: admin
-      password: admin
-      database: admin
-      authSource: admin
+      host: ${DB_HOST}
+      port: ${DB_PORT}
+      username: ${DB_USER}
+      password: ${DB_PWD}
+      database: ${DB_NAME}
+      authSource: ${DB_NAME}
   application:
     name: shipping-app
     api-version: "v1"

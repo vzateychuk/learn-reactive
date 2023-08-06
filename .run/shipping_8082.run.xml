@@ -1,6 +1,15 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="shipping:8082" type="GradleRunConfiguration" factoryName="Gradle">
     <ExternalSystemSettings>
+      <option name="env">
+        <map>
+          <entry key="DB_HOST" value="localhost" />
+          <entry key="DB_NAME" value="admin" />
+          <entry key="DB_PORT" value="27017" />
+          <entry key="DB_PWD" value="admin" />
+          <entry key="DB_USER" value="admin" />
+        </map>
+      </option>
       <option name="executionName" />
       <option name="externalProjectPath" value="$PROJECT_DIR$/shipping" />
       <option name="externalSystemIdString" value="GRADLE" />
@@ -10,7 +19,8 @@
       </option>
       <option name="taskNames">
         <list>
-          <option value=":shipping:run" />
+          <option value=":shipping:bootRun" />
+          <option value="--args='--server.port=8082'" />
         </list>
       </option>
       <option name="vmOptions" />
