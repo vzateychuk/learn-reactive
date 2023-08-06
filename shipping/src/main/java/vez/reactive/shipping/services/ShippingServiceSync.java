@@ -16,8 +16,8 @@ import java.util.List;
 @Transactional
 public class ShippingServiceSync implements ShippingService {
 
-    private static final LocalTime WORKDAY_START = LocalTime.parse("10:00");
-    private static final LocalTime WORKDAY_END = LocalTime.parse("18:00");
+    private static final LocalTime WORKDAY_START = LocalTime.parse("09:00");
+    private static final LocalTime WORKDAY_END = LocalTime.parse("23:00");
 
     private final ShippingRepo shipmentRepository;
 

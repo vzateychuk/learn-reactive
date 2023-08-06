@@ -1,21 +1,12 @@
-package vez.reactive;
+package vez.reactive.order;
 
-import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import vez.common.domain.Address;
-import vez.common.domain.order.LineItem;
-import vez.common.domain.order.Order;
-import vez.common.domain.order.OrderStatus;
 import vez.reactive.order.repo.OrderRepo;
 
-import java.util.Collections;
-import java.util.concurrent.ThreadLocalRandom;
-
 @SpringBootApplication
-public class OrderApp implements CommandLineRunner {
+public class OrderApp {
 
     @Autowired private OrderRepo orderRepo;
 
@@ -23,6 +14,7 @@ public class OrderApp implements CommandLineRunner {
         SpringApplication.run(OrderApp.class, args);
     }
 
+/*
     @Override
     public void run(String... args) throws Exception {
         int quantity = ThreadLocalRandom.current().nextInt(1, 10);
@@ -36,4 +28,5 @@ public class OrderApp implements CommandLineRunner {
 
         orderRepo.save(order);
     }
+*/
 }
