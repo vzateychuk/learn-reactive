@@ -23,7 +23,7 @@ public class ProductServiceSync implements ProductService{
 
     @Override
     public List<Product> getProducts() {
-        return productRepository.findAll().stream().toList();
+        return productRepository.findAll();
     }
 
     @Override

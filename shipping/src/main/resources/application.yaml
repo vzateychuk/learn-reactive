@@ -1,0 +1,26 @@
+springdoc:
+  swagger-ui:
+    doc-expansion: none
+    disable-swagger-default-url: true
+
+logging:
+  level:
+    root: INFO
+
+server:
+  port: 8082
+  servlet:
+    context-path: "/api/${spring.application.api-version}"
+
+spring:
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      username: admin
+      password: admin
+      database: admin
+      authSource: admin
+  application:
+    name: shipping-app
+    api-version: "v1"
