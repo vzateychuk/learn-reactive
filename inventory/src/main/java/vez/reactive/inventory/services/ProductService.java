@@ -12,4 +12,6 @@ public interface ProductService {
     Order handleOrder(Order order);
 
     Order revertOrder(Order order);
+
+    Product getProductById(String productId);
 }

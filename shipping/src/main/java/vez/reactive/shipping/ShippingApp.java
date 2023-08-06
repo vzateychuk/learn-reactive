@@ -1,4 +1,4 @@
-package vez.reactive;
+package vez.reactive.shipping;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -9,4 +9,5 @@ public class ShippingApp {
     public static void main(String[] args) {
         SpringApplication.run(ShippingApp.class, args);
     }
+
 }
