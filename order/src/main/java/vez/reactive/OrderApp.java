@@ -1,5 +1,6 @@
 package vez.reactive;
 
+import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -25,7 +26,7 @@ public class OrderApp implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         int quantity = ThreadLocalRandom.current().nextInt(1, 10);
-        LineItem lineItem = new LineItem(1L, quantity);
+        LineItem lineItem = new LineItem(new ObjectId("64cfe2bfc35d2a67041d5947"), quantity);
         Address address = new Address("Минск, Червякова 23");
 
         Order order = new Order();
