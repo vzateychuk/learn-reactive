@@ -52,6 +52,6 @@ public class ShippingServiceSync implements ShippingService {
 
     @Override
     public List<Shipment> getAllShipments() {
-        return shipmentRepository.findAll().stream().toList();
+        return shipmentRepository.findAll();
     }
 }

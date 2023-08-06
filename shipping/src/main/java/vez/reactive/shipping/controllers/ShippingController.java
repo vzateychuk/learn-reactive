@@ -22,11 +22,11 @@ public class ShippingController {
     }
 
     @PostMapping("/processOrder")
-    public Order process(@RequestBody Order order) {
+    public Order processOrder(@RequestBody Order order) {
         return shippingService.handleOrder(order);
     }
 
-    @GetMapping({"/shipments", "/shipments/"})
+    @GetMapping({"/shipments"})
     public List<Shipment> getAllShipments() {
         return shippingService.getAllShipments();
     }

@@ -1,5 +1,6 @@
 package vez.reactive.inventory.services;
 
+import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -24,6 +25,16 @@ public class ProductServiceSync implements ProductService{
     @Override
     public List<Product> getProducts() {
         return productRepository.findAll();
+    }
+
+    @Override
+    public Product getProductById(String productId) {
+
+        ObjectId objectId = new ObjectId(productId);
+        return productRepository.findById(objectId)
+                .orElseThrow(
+                        () -> new RuntimeException("Could not find the product: " + productId)
+                );
     }
 
     @Override

@@ -9,6 +9,9 @@ import vez.common.domain.Product;
 
 import vez.reactive.inventory.repo.ProductRepo;
 
+import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
+
 @SpringBootApplication
 @EnableMongoRepositories
 public class InventoryApp implements CommandLineRunner {
@@ -21,7 +24,12 @@ public class InventoryApp implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        Product doc = Product.builder().productId(1L).stock(100).build();
+        Random rnd = ThreadLocalRandom.current();
+        Product doc = Product.builder()
+                .name("Product"+rnd.nextInt(0,10))
+                .stock(rnd.nextInt(1,100))
+                .price(rnd.nextInt(1, 100))
+                .build();
         productRepo.save(doc);
     }
 }
