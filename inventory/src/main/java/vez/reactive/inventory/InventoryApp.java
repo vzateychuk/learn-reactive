@@ -22,14 +22,14 @@ public class InventoryApp implements CommandLineRunner {
 
     @Override
     public void run(String... args) {
-        ThreadLocalRandom rnd = ThreadLocalRandom.current();
         Product product = Product.builder()
-                .name("Product"+rnd.nextInt(0,10))
-                .stock(rnd.nextInt(1,100))
-                .price(rnd.nextInt(1, 100))
+                .name("Product"+ThreadLocalRandom.current().nextInt(1,10))
+                .stock(ThreadLocalRandom.current().nextInt(1,100))
+                .price(ThreadLocalRandom.current().nextInt(1, 100))
                 .build();
-        productRepo.save(product);
-        log.info("Preloaded product: {}", productRepo.findById(product.getId()));
+        productRepo.save(product)
+                .flatMap(p -> productRepo.findById(p.getId()))
+                .subscribe(p -> log.info("Preloaded product: {}", p.getId()));
     }
 
 }

@@ -1,15 +1,6 @@
-springdoc:
-  swagger-ui:
-    doc-expansion: none
-    disable-swagger-default-url: true
-
 logging:
   level:
     root: INFO
-
-server:
-  servlet:
-    context-path: "/api/${spring.application.api-version}"
 
 spring:
   data:

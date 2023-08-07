@@ -6,7 +6,7 @@ plugins {
 }
 
 group 'vez.reactive'
-version = '0.0.1-SNAPSHOT'
+version = '1.0.0-REACTIVE'
 
 java {
     sourceCompatibility = '17'
@@ -23,13 +23,12 @@ repositories {
 dependencies {
     implementation project(':common')
 
-    // Swagger UI (OpenAPI tools)
-    implementation group: 'org.springdoc', name: 'springdoc-openapi-starter-webmvc-ui', version: '2.1.0'
-
-    implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
-    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-data-mongodb-reactive'
+    implementation 'org.springframework.boot:spring-boot-starter-webflux'
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'io.projectreactor:reactor-test'
 }
 
 test {

@@ -20,10 +20,10 @@
       <option name="taskNames">
         <list>
           <option value=":inventory:bootRun" />
-          <option value="--args='--server.port=8081'" />
+          <option value="--args='--server.port=8081 --server.servlet.context-path=/api/v1'" />
         </list>
       </option>
-      <option name="vmOptions" value="" />
+      <option name="vmOptions" value="--server.port=8081" />
     </ExternalSystemSettings>
     <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
     <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>

@@ -1,17 +1,17 @@
 package vez.reactive.inventory.services;
 
+import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
 import vez.common.domain.Product;
 import vez.common.domain.order.Order;
 
-import java.util.List;
-
 public interface ProductService {
 
-    List<Product> getProducts();
+    Flux<Product> getProducts();
 
-    Order handleOrder(Order order);
+    Mono<Order> handleOrder(Order order);
 
-    Order revertOrder(Order order);
+    Mono<Order> revertOrder(Order order);
 
-    Product getProductById(String productId);
+    Mono<Product> getProductById(String productId);
 }
